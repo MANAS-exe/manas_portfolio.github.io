@@ -622,19 +622,123 @@ footer{
 .stagger.up>*:nth-child(11){transition-delay:.75s}
 .stagger.up>*:nth-child(12){transition-delay:.82s}
 
-/* ─── RESPONSIVE ─── */
+/* ─── RESPONSIVE: Tablet ─── */
 @media(max-width:900px){
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
   #hero{grid-template-columns:1fr;}
-  .hero-img-wrap{height:55vw;order:2;}
+  .hero-img-wrap{height:60vw;order:2;}
   .hero-text{order:1;padding:5rem 1.5rem 2rem;}
-  .hero-name{font-size:clamp(56px,14vw,90px);}
+  .hero-name,.hero-name-2{font-size:clamp(56px,12vw,90px);}
   .ach-grid{grid-template-columns:1fr 1fr;}
   .tl-item{grid-template-columns:1fr;padding-left:28px;}
-  .proj-featured,.proj-minor,.skills-layout,.edu-row,.acts-grid,.int-grid{grid-template-columns:1fr;}
+  .tl-right{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:20px;}
+  .proj-featured,.proj-minor,.skills-layout,.edu-row,.acts-grid{grid-template-columns:1fr;}
+  .int-grid{flex-direction:column;}
   .edu-row{gap:0;}
+  .amex-metrics{gap:20px;}
+  .stats-grid{flex-wrap:wrap;}
+  .stat-block{min-width:calc(50% - 1px);}
   footer{flex-direction:column;gap:8px;text-align:center;}
+  section{padding:60px 1.5rem;}
+  .inner{padding:0;}
+  .skills-cols{grid-template-columns:1fr;}
+  .contact-title{font-size:clamp(36px,8vw,56px);}
+}
+
+/* ─── RESPONSIVE: Mobile ─── */
+@media(max-width:480px){
+  nav{padding:0 1rem;}
+  .nav-logo{font-size:15px;}
+  .nav-resume{font-size:11px;padding:6px 12px;}
+
+  /* Hero */
+  #hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-text{padding:4.5rem 1rem 1.5rem;order:1;}
+  .hero-img-wrap{height:65vw;order:2;}
+  .hero-name,.hero-name-2{font-size:clamp(52px,16vw,80px);letter-spacing:-1px;}
+  .hero-type-wrap{height:44px;}
+  .hero-type{font-size:18px;}
+  .cursor-blink{height:20px;}
+  .hero-eyebrow{font-size:10px;letter-spacing:1.5px;}
+  .hero-bio{font-size:14px;margin-bottom:24px;}
+  .hero-btns{flex-direction:column;gap:10px;}
+  .btn-red,.btn-outline{padding:12px 20px;font-size:12px;text-align:center;}
+
+  /* Sections */
+  section{padding:48px 1rem;}
+  .sec-title{font-size:clamp(28px,8vw,40px);margin-bottom:36px;}
+  .sec-label{font-size:10px;}
+
+  /* Achievements */
+  .ach-grid{grid-template-columns:1fr;gap:0;}
+  .ach-card{padding:22px 18px;}
+  .ach-num{font-size:40px;}
+  .ach-title{font-size:14px;}
+  .ach-desc{font-size:12px;}
+
+  /* Hackathon */
+  .amex-card{padding:24px 18px;}
+  .amex-title{font-size:20px;}
+  .amex-metrics{gap:16px;}
+  .amex-mval{font-size:24px;}
+  .amex-mlabel{font-size:11px;}
+
+  /* Experience timeline */
+  .road-wrap{padding-left:0;}
+  .road-svg{display:none;}
+  .tl-item{padding:28px 0 28px 20px;grid-template-columns:1fr;}
+  .tl-item::before{left:3px;top:34px;width:8px;height:8px;}
+  .tl-title{font-size:18px;}
+  .tl-sub{font-size:11px;}
+  .tl-bullets li{font-size:13px;}
+  .tl-left{padding-right:0;margin-bottom:12px;}
+  .tl-right{padding-left:0;padding-top:14px;}
+  .tl-highlight{font-size:11px;padding:6px 12px;}
+
+  /* Projects */
+  .proj-featured,.proj-minor{grid-template-columns:1fr;gap:14px;}
+  .proj-card{padding:22px 18px;}
+  .proj-title{font-size:16px;}
+  .proj-desc{font-size:13px;}
+  .proj-result{font-size:12px;}
+
+  /* Skills */
+  .skills-layout,.skills-cols{grid-template-columns:1fr;gap:0;}
+  .sg-pill{font-size:12px;padding:6px 12px;}
+  .courses-grid{gap:6px;}
+  .course{font-size:12px;padding:7px 12px;}
+
+  /* Education */
+  .edu-row{grid-template-columns:1fr;gap:0;}
+  .edu-card{padding:22px 18px;}
+  .edu-degree{font-size:15px;}
+  .edu-score{font-size:28px;}
+  .acts-grid{grid-template-columns:1fr;gap:0;}
+
+  /* Interests */
+  .int-grid{flex-direction:column;gap:10px;}
+  .int-card{min-width:unset;}
+  .int-title{font-size:22px;}
+  .int-ghost{font-size:80px;}
+
+  /* Contact */
+  .contact-title{font-size:clamp(32px,9vw,48px);}
+  .contact-sub{font-size:14px;}
+  .contact-links{flex-direction:column;gap:8px;}
+  .clink{text-align:center;padding:12px 20px;}
+
+  /* Stats */
+  #site-stats{padding:32px 1rem;}
+  .stats-grid{flex-direction:column;gap:0;}
+  .stat-block{min-width:unset;border-right:none!important;border-bottom:1px solid var(--border);}
+  .sb-val{font-size:26px;}
+
+  /* Footer */
+  footer{padding:16px 1rem;font-size:11px;}
+
+  /* Marquee */
+  .marquee-item{font-size:16px;padding:0 24px;}
 }
 
 /* ─── MAGIC: ambient glow orbs ─── */
@@ -965,8 +1069,8 @@ footer::before{
       <div class="ach-card">
         <div class="ach-num">06</div>
         <div class="ach-title">INSPIRE Scholarship</div>
-        <div class="ach-desc">Three years running, the Department of Science and Technology kept saying yes. Funded my curiosity so I could focus on building things that matter.</div>
-        <span class="ach-pill">3 Consecutive Years</span>
+        <div class="ach-desc">Four years running, the Department of Science and Technology kept saying yes. Funded my curiosity so I could focus on building things that matter.</div>
+        <span class="ach-pill">4 Consecutive Years</span>
       </div>
       <div class="ach-card">
         <div class="ach-num">07</div>
